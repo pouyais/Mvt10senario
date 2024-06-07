@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+
+def property_grid(request):
+    return render(request,'property/property-grid.html')
+
+
+def property_single(request):
+    return render(request,'property/property-single.html')

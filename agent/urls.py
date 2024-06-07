@@ -7,6 +7,6 @@ app_name = 'agent'
 
 
 urlpatterns = [
-    path('',agent,name='agent'),
-    path('single/',agent_single,name='agent-single'),
+    path('',agents_grid,name='agents-grid'),
+    path('agent-single/',agent_single,name='agent-single'),
 ]

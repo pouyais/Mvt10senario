@@ -23,6 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('root.urls')),
     path('agent/',include('agent.urls')),
+    path('blog/',include('blog.urls')),
+    path('property/',include('property.urls')),
+
 ]
 
 

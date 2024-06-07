@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 
-def agent(request):
+def agents_grid(request):
     return render(request,'agent/agents-grid.html')
 
 
