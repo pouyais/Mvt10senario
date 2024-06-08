@@ -16,6 +16,7 @@ class New(models.Model):
     image = models.ImageField(upload_to='blog',default='notfound.jpg')
     title = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
+    description = models.TextField(null=True)
     category = models.ManyToManyField(Category_new)
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.BooleanField(default=True)
