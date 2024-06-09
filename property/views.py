@@ -45,5 +45,8 @@ def property_single(request,id):
     return render(request,'property/property-single.html',context=context)
 
 
+
+
+
 def property_singl(request):
     return render(request,'property/property-single.html')

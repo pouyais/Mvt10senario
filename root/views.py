@@ -22,7 +22,12 @@ def index(request):
 
 
 def about(request):
-    return render(request,'root/about.html')
+
+    context = {
+        'agents' : Agent.objects.filter(status=True)
+    }
+
+    return render(request,'root/about.html',context=context)
 
 
 def contact(request):
