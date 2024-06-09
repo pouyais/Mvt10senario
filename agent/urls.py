@@ -9,7 +9,7 @@ app_name = 'agent'
 
 urlpatterns = [
     path('',agents_grid,name='agents-grid'),
-    path('agent-singl/',agent_singl,name='agent-singl'),
+    path('agent-singl/<int:id>',agent_single,name='agent-singl'),
     path('agent-single/<int:id>',agent_single,name='agent-single'),
     path('prop/<str:category>',property_grid,name="list_by_category"),
     path('more/<int:id>',property_single,name="list_by_id")
