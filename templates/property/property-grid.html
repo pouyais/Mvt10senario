@@ -36,14 +36,18 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="grid-option">
-              <form>
+              {% comment %} <form>
                 <select class="custom-select">
-                  <option selected>All</option>
-                  <option value="1">New to Old</option>
-                  <option value="2">For Rent</option>
-                  <option value="3">For Sale</option>
+                  {% for cat in category %}
+                  <option ><a href={% url "property:list_by_category" category=cat.title %}>{{cat.title}}</a></option>
+                  {% endfor %}
                 </select>
-              </form>
+              </form> {% endcomment %}
+              <div>
+                {% for cat in category %}
+                <a href={% url "property:list_by_category" category=cat.title %}>{{cat.title}}</a>
+                {% endfor %}
+              </div>
             </div>
           </div>
           <div class="col-md-4">
