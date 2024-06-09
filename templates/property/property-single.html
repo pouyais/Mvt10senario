@@ -5,14 +5,14 @@
 
   <main id="main">
 
+
     <!-- ======= Intro Single ======= -->
     <section class="intro-single">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">304 Blaster Up</h1>
-              <span class="color-text-a">Chicago, IL 606543</span>
+              <h1 class="title-single">{{detail.title}}</h1>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
@@ -25,7 +25,7 @@
                   <a href="property-grid.html">Properties</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                  304 Blaster Up
+                  {{detail.title}}
                 </li>
               </ol>
             </nav>
@@ -38,14 +38,11 @@
     <section class="property-single nav-arrow-b">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-8">
+          <div class='col-lg-8'>
             <div id="property-single-carousel" class="swiper">
               <div class="swiper-wrapper">
-                <div class="carousel-item-b swiper-slide">
-                  <img src="{% static 'assets/img/slide-1.jpg' %}" alt="">
-                </div>
-                <div class="carousel-item-b swiper-slide">
-                  <img src="{% static 'assets/img/slide-2.jpg' %}" alt="">
+                <div class="img-box-a">
+                  <img src={{detail.image.url}} alt="" class="img-a img-fluid">
                 </div>
               </div>
             </div>
@@ -64,7 +61,7 @@
                       <span class="bi bi-cash">$</span>
                     </div>
                     <div class="card-title-c align-self-center">
-                      <h5 class="title-c">15000</h5>
+                      <h5 class="title-c">{{detail.rent}}</h5>
                     </div>
                   </div>
                 </div>
@@ -80,37 +77,29 @@
                     <ul class="list">
                       <li class="d-flex justify-content-between">
                         <strong>Property ID:</strong>
-                        <span>1134</span>
-                      </li>
-                      <li class="d-flex justify-content-between">
-                        <strong>Location:</strong>
-                        <span>Chicago, IL 606543</span>
-                      </li>
-                      <li class="d-flex justify-content-between">
-                        <strong>Property Type:</strong>
-                        <span>House</span>
+                        <span>{{detail.id}}</span>
                       </li>
                       <li class="d-flex justify-content-between">
                         <strong>Status:</strong>
-                        <span>Sale</span>
+                        <span>{{detail.status}}</span>
                       </li>
                       <li class="d-flex justify-content-between">
                         <strong>Area:</strong>
-                        <span>340m
+                        <span>{{detail.area}}m
                           <sup>2</sup>
                         </span>
                       </li>
                       <li class="d-flex justify-content-between">
                         <strong>Beds:</strong>
-                        <span>4</span>
+                        <span>{{detail.beds}}</span>
                       </li>
                       <li class="d-flex justify-content-between">
                         <strong>Baths:</strong>
-                        <span>2</span>
+                        <span>{{detail.baths}}</span>
                       </li>
                       <li class="d-flex justify-content-between">
                         <strong>Garage:</strong>
-                        <span>1</span>
+                        <span>{{detail.garages}}</span>
                       </li>
                     </ul>
                   </div>
@@ -195,32 +184,22 @@
             </div>
             <div class="row">
               <div class="col-md-6 col-lg-4">
-                <img src="{% static 'assets/img/agent-4.jpg' %}" alt="" class="img-fluid">
+                <img src={{detail.agent.image.url}} alt="" class="img-fluid">
               </div>
               <div class="col-md-6 col-lg-4">
                 <div class="property-agent">
-                  <h4 class="title-agent">Anabella Geller</h4>
+                  <h4 class="title-agent">{{detail.agent.user.username}}</h4>
                   <p class="color-text-a">
-                    Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                    dui. Quisque velit nisi,
-                    pretium ut lacinia in, elementum id enim.
+                    {{detail.agent.description}}
                   </p>
                   <ul class="list-unstyled">
                     <li class="d-flex justify-content-between">
                       <strong>Phone:</strong>
-                      <span class="color-text-a">(222) 4568932</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>Mobile:</strong>
-                      <span class="color-text-a">777 287 378 737</span>
+                      <span class="color-text-a">+{{detail.agent.phone}}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Email:</strong>
-                      <span class="color-text-a">annabella@example.com</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>Skype:</strong>
-                      <span class="color-text-a">Annabela.ge</span>
+                      <span class="color-text-a">{{detail.agent.email}}</span>
                     </li>
                   </ul>
                   <div class="socials-a">
@@ -280,6 +259,7 @@
         </div>
       </div>
     </section><!-- End Property Single-->
+
 
   </main><!-- End #main -->
 
