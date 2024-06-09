@@ -122,7 +122,7 @@
                       <div class="price-box d-flex">
                         <span class="price-a">rent | $ {{property.rent}}</span>
                       </div>
-                      <a href="#" class="link-a">Click here to view
+                      <a href={% url "root:list_by_id" id=property.id %} class="link-a">Click here to view
                         <span class="bi bi-chevron-right"></span>
                       </a>
                     </div>
@@ -193,7 +193,7 @@
                 <div class="card-header-d">
                   <div class="card-title-d align-self-center">
                     <h3 class="title-d">
-                      <a href="agent-single.html" class="link-two">{{person.user.username}}</a>
+                      <a href={% url "root:list_by_person" id=person.id %} class="link-two">{{person.user.username}}</a>
                     </h3>
                   </div>
                 </div>
@@ -282,7 +282,7 @@
                     </div>
                     <div class="card-title-b">
                       <h2 class="title-2">
-                        <a href="blog-single.html">{{new.title}}</a>
+                        <a href={% url "root:list_by_blog" id=new.id %}>{{new.title}}</a>
                       </h2>
                     </div>
                     <div class="card-date">
